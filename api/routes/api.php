@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Middleware\Cors;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,23 +18,27 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware([Cors::class])->group(function () {
+
 // Projects routes
-Route::get('/projects', 'ProjectsController@getAll')->name('getAllProjects');
-Route::get('/projects/{id}', 'ProjectsController@get')->name('getProject');
-Route::post('/projects', 'ProjectsController@create')->name('createProject');
-Route::put('/projects/{id}', 'ProjectsController@update')->name('updateProject');
-Route::delete('/projects/{id}', 'ProjectsController@delete')->name('deleteProject');
+    Route::get('/projects', 'ProjectsController@getAll')->name('getAllProjects');
+    Route::get('/projects/{id}', 'ProjectsController@get')->name('getProject');
+    Route::post('/projects', 'ProjectsController@create')->name('createProject');
+    Route::put('/projects/{id}', 'ProjectsController@update')->name('updateProject');
+    Route::delete('/projects/{id}', 'ProjectsController@delete')->name('deleteProject');
 
 // Standards routes
-Route::get('/standards', 'ProjectsController@getAll')->name('getAllStandards');
-Route::get('/standards/{id}', 'StandardsController@get')->name('getStandard');
-Route::post('/standards', 'StandardsController@create')->name('createStandard');
-Route::put('/standards/{id}', 'StandardsController@update')->name('updateStandard');
-Route::delete('/standards/{id}', 'StandardsController@delete')->name('deleteStandard');
+    Route::get('/standards', 'ProjectsController@getAll')->name('getAllStandards');
+    Route::get('/standards/{id}', 'StandardsController@get')->name('getStandard');
+    Route::post('/standards', 'StandardsController@create')->name('createStandard');
+    Route::put('/standards/{id}', 'StandardsController@update')->name('updateStandard');
+    Route::delete('/standards/{id}', 'StandardsController@delete')->name('deleteStandard');
 
 // Forms routes
-Route::get('/forms', 'FormsController@getAll')->name('getAllForms');
-Route::get('/forms/{id}', 'FormsController@get')->name('getForm');
-Route::post('/forms', 'FormsController@create')->name('createForm');
-Route::put('/forms/{id}', 'FormsController@update')->name('updateForm');
-Route::delete('/forms/{id}', 'FormsController@delete')->name('deleteForm');
+    Route::get('/forms', 'FormsController@getAll')->name('getAllForms');
+    Route::get('/forms/{id}', 'FormsController@get')->name('getForm');
+    Route::post('/forms', 'FormsController@create')->name('createForm');
+    Route::put('/forms/{id}', 'FormsController@update')->name('updateForm');
+    Route::delete('/forms/{id}', 'FormsController@delete')->name('deleteForm');
+
+});
