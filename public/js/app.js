@@ -77954,7 +77954,7 @@ function useAuth() {
               res = _context.sent;
               jwt = res["access_token"];
               localStorage.setItem("SMARTECH_JWT", jwt);
-              history.push(_utils_routes__WEBPACK_IMPORTED_MODULE_3__["default"].LOGIN);
+              window.location = _utils_routes__WEBPACK_IMPORTED_MODULE_3__["default"].HOME;
               _context.next = 12;
               break;
 
@@ -77987,7 +77987,7 @@ function useAuth() {
 
   var logout = function logout() {
     localStorage.removeItem("SMARTECH_JWT");
-    history.push(_utils_routes__WEBPACK_IMPORTED_MODULE_3__["default"].LOGIN);
+    window.location = _utils_routes__WEBPACK_IMPORTED_MODULE_3__["default"].LOGIN;
   };
 
   return {

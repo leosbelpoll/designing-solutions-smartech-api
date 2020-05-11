@@ -15,7 +15,7 @@ export default function useAuth() {
             });
             const jwt = res["access_token"];
             localStorage.setItem("SMARTECH_JWT", jwt);
-            history.push(URLMapping.LOGIN);
+            window.location = URLMapping.HOME;
         } catch (err) {
             throw err;
         }
@@ -32,7 +32,7 @@ export default function useAuth() {
 
     const logout = () => {
         localStorage.removeItem("SMARTECH_JWT");
-        history.push(URLMapping.LOGIN);
+        window.location = URLMapping.LOGIN;
     };
 
     return {
