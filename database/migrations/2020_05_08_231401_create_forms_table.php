@@ -23,7 +23,7 @@ class CreateFormsTable extends Migration
             $table->float('initialTravel');
             $table->float('endTravel');
             $table->float('purchasedGallons');
-            $table->string('description', 255);
+            $table->text('description');
             $table->timestamps();
         });
     }
