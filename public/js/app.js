@@ -79771,6 +79771,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _configs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../configs */ "./resources/js/configs.js");
 
 var getEnv = function getEnv(envVariable) {
+  console.log(process.env);
   return process.env["REACT_APP_".concat(envVariable)] || _configs__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_VALUES"]["DEFAULT_".concat(envVariable)];
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
