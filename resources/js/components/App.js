@@ -1,29 +1,19 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from "react-dom";
+
+import store from "./redux/store";
+import Routes from "./app/Routes";
+import "./index.scss";
 
 function App() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">App Component</div>
-
-                        <div className="card-body">
-                            <h1>React test</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Vitae commodi cumque velit
-                                tenetur corporis quasi obcaecati non odio
-                                voluptatum asperiores dolore, deleniti culpa
-                                facilis sequi inventore, esse, fuga illo
-                                recusandae!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Provider store={store}>
+            <Router>
+                <Routes />
+            </Router>
+        </Provider>
     );
 }
 
