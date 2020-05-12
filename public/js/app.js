@@ -79627,7 +79627,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_VALUES", function() { return DEFAULT_VALUES; });
 var DEFAULT_VALUES = {
   DEFAULT_APP_NAME: "SmarTech",
-  DEFAULT_API_URL: "http://localhost:8000/api",
+  DEFAULT_API_URL: "/api",
   DEFAULT_FORMATTED_SEPARATOR: "."
 };
 
